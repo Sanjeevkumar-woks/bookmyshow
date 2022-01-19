@@ -23,6 +23,7 @@ import { UserList } from './components/adminui/users/UserList';
 import { AddBooking, BookingsList } from './components/adminui/Bookings';
 import { AddUsers } from './components/adminui/users/AddUsers';
 import { createContext } from 'react';
+import { ContactUs } from './components/userui/ContactUs';
 
 const contextAPI = createContext(null);
 function App() {
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <Signup/>
+          </Route>
+          <Route exact path="/contactus">
+          <ContactUs/>
           </Route>
           <Route exact path="/movies">
             <MovieList/>
