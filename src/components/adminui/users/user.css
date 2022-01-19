@@ -1,0 +1,23 @@
+h1{
+    margin: 10px 50px;
+    color: slateblue;
+}
+h2{
+    margin: 10px 10px 0px;
+    color: slateblue; 
+}
+.user{
+    margin: 10px;
+    border-bottom: 1px solid;
+}
+
+ .adduser{
+     text-align: center;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: space-between;
+     width: 50%;
+     margin: 0px 200px;
+
+ }

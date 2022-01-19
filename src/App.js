@@ -1,24 +1,121 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route} from "react-router-dom";
+import {  ThemeProvider, createTheme } from '@mui/material/styles';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Login from './components/userui/Login';
+import Signup from './components/userui/Signup';
+import { MovieList } from './components/userui/MovieList';
+import { MovieDetails } from './components/userui/MovieDetails';
+import { Topbar } from './components/navigation/Topbar';
+import {TheaterList} from './components/Theater/TheaterList'
+import { Seat } from './components/Theater/Seats/Seat';
+import { useState } from "react";
+import {Button,Paper} from '@mui/material';
+import { AdminNav } from './components/adminui/AdminNav';
+import { AddMovies } from './components/adminui/AddMovie';
+import { AdminMovieList } from './components/adminui/AdminMovieList';
+import { AdminTheaterList } from './components/adminui/AdminTheaterList';
+import { AddTheater } from './components/adminui/AddTheater';
+import { UpdateMovie } from './components/adminui/UpdateMovie';
+import { UpdateTheater } from './components/adminui/UpdateTheater';
+import { UserList } from './components/adminui/users/UserList';
+import { AddBooking, BookingsList } from './components/adminui/Bookings';
+import { AddUsers } from './components/adminui/users/AddUsers';
+import { createContext } from 'react';
 
+const contextAPI = createContext(null);
 function App() {
+
+  const [mode,setMode]=useState("dark");
+  const booking={
+    
+  }
+   const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
   return (
+    <contextAPI.Provider value={{booking}}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={theme}>
+<Paper sx={{minHeight:'100vh'}} elevation={20} >
+      <Topbar  button={<Button onClick={()=>setMode(mode==='dark'?'light':'dark')}>{mode==='dark'?<LightModeIcon/>:<DarkModeIcon/>}</Button>}/>
+        <Switch>
+           <Route exact path="/">
+           {/* <CarouselList/> */}
+           <MovieList/>
+          </Route>
+          <Route exact path="/login">
+             <Login/>
+          </Route>
+          <Route exact path="/signup">
+            <Signup/>
+          </Route>
+          <Route exact path="/movies">
+            <MovieList/>
+          </Route>
+          <Route path="/movie/:id">
+            <MovieDetails/>
+          </Route>
+          <Route path="/admin/home">
+            <AdminNav/>
+            <MovieList/>
+          </Route>
+          <Route path="/admin/movies">
+            <AdminNav/>
+            <AdminMovieList/>
+          </Route>
+          <Route path="/admin/addmovie">
+            <AdminNav/>
+            <AddMovies/>
+          </Route>
+          <Route path="/update/movies/:id">
+            <AdminNav/>
+            <UpdateMovie/>
+          </Route>
+          <Route path="/admin/theaters">
+            <AdminNav/>
+            <AdminTheaterList/>
+          </Route>
+          <Route path="/admin/addtheater">
+            <AdminNav/>
+            <AddTheater/>
+          </Route>
+          <Route path="/update/theater/:id">
+            <AdminNav/>
+            <UpdateTheater/>
+          </Route>
+          <Route path="/admin/users">
+            <AdminNav/>
+            <UserList/>
+          </Route>
+          <Route path="/admin/adduser">
+            <AdminNav/>
+            <AddUsers/>
+          </Route>
+          <Route path="/admin/booking">
+            <AdminNav/>
+            <BookingsList/>
+          </Route>
+          <Route path="/admin/addbooking">
+            <AdminNav/>
+            <AddBooking/>
+          </Route>
+           <Route path="/theatersList">
+         <TheaterList/>
+           </Route>
+          <Route path="/seatselection">
+          <Seat/>
+          </Route> 
+           <Route path="">
+          </Route>  
+        </Switch>
+        </Paper>
+        </ThemeProvider>
+        </div>
+        </contextAPI.Provider>
   );
 }
 
