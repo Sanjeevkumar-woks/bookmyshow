@@ -54,6 +54,9 @@ function App() {
           <Route exact path="/signup">
             <Signup/>
           </Route>
+          <Route exact path="/contactus">
+            <ContactUs/>
+          </Route>
           <Route exact path="/movies">
             <MovieList/>
           </Route>

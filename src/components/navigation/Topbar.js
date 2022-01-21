@@ -15,6 +15,7 @@ export  function Topbar({ button }) {
     <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="/movies">Movies</Nav.Link>
       <Nav.Link href="/theatersList">Theater</Nav.Link>
+      <Nav.Link href="/contactus">Contact-Us</Nav.Link>
     </Nav>
     </Container>
     <Stack direction="row" spacing={2}>
