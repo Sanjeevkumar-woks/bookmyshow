@@ -20,7 +20,7 @@ export  function ContactUs() {
       email: email.value,
       message: message.value,
     };
-    let response = await fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/contactus", {
+    let response = await fetch("https://61c41708f1af4a0017d992ac.mockapi.io/Messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

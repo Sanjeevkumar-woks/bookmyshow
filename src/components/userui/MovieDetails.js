@@ -19,7 +19,7 @@ export function MovieDetails() {
     {method:"GET"}).then((data)=>data.json()).then((mv)=>setMovie(mv));
   };
  
- useEffect(getMovie,[]);
+ useEffect(getMovie);
     const history=useHistory();
     const[{name,poster,rating,votes,genres,language,duration, releaseDate}]=[movie]
     //seting movie name to the boooking variable

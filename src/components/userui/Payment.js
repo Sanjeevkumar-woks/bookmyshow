@@ -39,10 +39,8 @@ const [show, setShow] = useState(false);
         })
         .then((data)=>data.json())
   .then(()=>history.push("/movies"));
-    
   setShow(!show)
       }
-
 
 
   return (
