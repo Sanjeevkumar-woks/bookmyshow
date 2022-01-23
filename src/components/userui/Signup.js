@@ -59,6 +59,7 @@ export default function Signup() {
         <Button className="m-4" block size="lg" type="submit" >
           Signup
         </Button>
+        <Button variant="link" onClick={()=>history.push("/login")}>Login</Button>
       </Form>
     </div>
   );

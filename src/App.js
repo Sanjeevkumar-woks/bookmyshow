@@ -21,7 +21,6 @@ import { UpdateMovie } from './components/adminui/UpdateMovie';
 import { UpdateTheater } from './components/adminui/UpdateTheater';
 import { UserList } from './components/adminui/users/UserList';
 import { AddBooking, BookingsList } from './components/adminui/Bookings';
-import { AddUsers } from './components/adminui/users/AddUsers';
 import { createContext } from 'react';
 import { ContactUs } from './components/userui/ContactUs';
 import { FreeMovieList } from './components/userui/FreeMovieList';
@@ -106,10 +105,6 @@ function App() {
           <Route path="/admin/users">
             <AdminNav/>
             <UserList/>
-          </Route>
-          <Route path="/admin/adduser">
-            <AdminNav/>
-            <AddUsers/>
           </Route>
           <Route path="/admin/booking">
             <AdminNav/>

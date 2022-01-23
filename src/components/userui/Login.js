@@ -58,6 +58,7 @@ export default function Login() {
         <Button className="m-4" block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
+       <Button variant="link" onClick={()=>history.push("/signup")}>Signup</Button>
       </Form>
     </div>
   );
