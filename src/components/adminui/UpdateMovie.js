@@ -39,7 +39,7 @@ function EditMovie({movie}) {
         duration,
         releaseDate
     }
-    fetch(`https://61c41708f1af4a0017d992ac.mockapi.io/movies/${movie.id}`,{
+    fetch(`http://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${movie.id}`,{
         method:"PUT",
         body: JSON.stringify(updatedMovie),
         headers:{"Content-Type": "application/json"},

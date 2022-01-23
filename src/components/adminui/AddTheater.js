@@ -16,7 +16,7 @@ export function AddTheater() {
         movies,
         showtimes
     }
-    fetch("https://61c41708f1af4a0017d992ac.mockapi.io/Theater",{
+    fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/theaters",{
       method:"POST",
       body: JSON.stringify(newTheater),
       headers:{"Content-Type": "application/json"},

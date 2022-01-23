@@ -16,8 +16,8 @@ export function UserList() {
         .then((data)=>data.json())
         .then((us)=>setUserList(us))
       }
-      const del=(id)=>{
-        fetch(`https://61c41708f1af4a0017d992ac.mockapi.io/Users${id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
+      const del=(_id)=>{
+        fetch(`https://61c41708f1af4a0017d992ac.mockapi.io/Users${_id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
       }
       const [userList,setUserList]=useState([]);
       const history=useHistory();
@@ -29,17 +29,17 @@ export function UserList() {
             <br/>
             <Button variant="outlined" color="error" onClick={()=>history.push("/admin/adduser")}><AddIcon/>Add-User</Button>
             
-  { userList.map(({id,avatar,name,email},index)=>(
+  { userList.map(({_id,username,email},index)=>(
                     <User 
                     deletButton={<Button className='delete' color='error'
-                    onClick={() =>del(id) 
+                    onClick={() =>del(_id) 
                     }><DeleteForeverTwoToneIcon /></Button>}
 
                     editButton={<Button sx={{marginRight:6}}
-                        onClick={()=>{history.push(`/edituser/${id}`)}}>
+                        onClick={()=>{history.push(`/edituser/${_id}`)}}>
                     
                         <EditIcon/></Button>}
-                   key={index} id={id} avatar={avatar} name={name} email={email} />
+                   key={index} _id={_id} username={username} email={email} />
                 ))
             }
         </div>

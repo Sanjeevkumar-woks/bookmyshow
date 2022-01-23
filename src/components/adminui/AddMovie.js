@@ -27,7 +27,7 @@ export function AddMovies() {
         duration,
         releaseDate
     }
-    fetch("https://61c41708f1af4a0017d992ac.mockapi.io/movies",{
+    fetch("http://hacckathon-2-backend-sanjeev.herokuapp.com/movies",{
       method:"POST",
       body: JSON.stringify(newMovie),
       headers:{"Content-Type": "application/json"},

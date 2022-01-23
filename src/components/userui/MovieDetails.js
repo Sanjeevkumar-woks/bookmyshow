@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useHistory,useParams} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import {useContext } from "react";
+import {context}  from '../../App'
 
 
 
@@ -13,14 +15,16 @@ export function MovieDetails() {
     console.log(id);
   const [movie,setMovie]=useState([]);
   const getMovie=()=>{
-    fetch(`https://61c41708f1af4a0017d992ac.mockapi.io/movies/${id}`,
+    fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,
     {method:"GET"}).then((data)=>data.json()).then((mv)=>setMovie(mv));
   };
  
- useEffect(getMovie);
+ useEffect(getMovie,[]);
     const history=useHistory();
     const[{name,poster,rating,votes,genres,language,duration, releaseDate}]=[movie]
- 
+    //seting movie name to the boooking variable
+    const {setMName} = useContext(context);
+    setMName(name);
     return (
         <div className='movie-details'>
             <div className='Bck-poster'>

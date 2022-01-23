@@ -14,13 +14,13 @@ export function AdminTheaterList() {
     const [theaterList,setTheaterList]=useState([]);
       
     const get=()=>{
-       fetch("https://61c41708f1af4a0017d992ac.mockapi.io/Theater")
+       fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/theaters")
        .then((data)=>data.json())
        .then((th)=>setTheaterList(th))
     }   
 
     const del=(id)=>{
-        fetch(`https://61c41708f1af4a0017d992ac.mockapi.io/Theater/${id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
+        fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/theaters/${id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
       }
     useEffect(get,[]);
     const history=useHistory();

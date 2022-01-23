@@ -8,12 +8,10 @@ import TextField from '@mui/material/TextField';
 
 export function AddUsers( ) {
     const history = useHistory();
-    const [id,setId] = useState('');
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const adduser=() => {
         const newUser = {
-            id,
             name,
             email
         }
@@ -29,7 +27,6 @@ export function AddUsers( ) {
     return (
         <div className='adduser'>
              <h2>Add Users</h2>
-            <TextField id="standard-basic" label="Id" variant="standard" onChange={(event) => setId(event.target.value)}/>
             <br/>
             <TextField id="standard-basic" label="Name" variant="standard"  onChange={(event) => setName(event.target.value)}/>
             <br/>

@@ -3,10 +3,15 @@ import "./Theater.css"
 import { Button} from '@mui/material';
 import { useHistory} from "react-router-dom";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import {useContext } from "react";
+import {context}  from '../../App'
 
 export function Theater({id,name,movies,showtimes}) {
     const history=useHistory();
-    console.log(showtimes);
+    const {setTName} = useContext(context);
+    const {setTime} = useContext(context);
+    setTName(name);
+    setTime(showtimes[0]);
     return (
         <div className='theater'>
             <div>      

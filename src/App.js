@@ -24,21 +24,33 @@ import { AddBooking, BookingsList } from './components/adminui/Bookings';
 import { AddUsers } from './components/adminui/users/AddUsers';
 import { createContext } from 'react';
 import { ContactUs } from './components/userui/ContactUs';
+import { FreeMovieList } from './components/userui/FreeMovieList';
+import { Payment } from './components/userui/Payment';
 
-const contextAPI = createContext(null);
+export const context = createContext("");
+
 function App() {
 
   const [mode,setMode]=useState("dark");
-  const booking={
-    
-  }
+  
+  const[uname, setUname]=useState("");
+  const[email,setemail]=useState("");
+  const[mName,setMName]=useState("");
+  const [time,setTime]=useState("");
+  const [seats,setSeats]=useState("");
+  const[tName,setTName]=useState("");
+
+
    const theme = createTheme({
     palette: {
       mode: mode,
     },
   });
+
+
   return (
-    <contextAPI.Provider value={{booking}}>
+    // creating Contaxt For seating up Booking Details
+    <context.Provider value={{uname,setUname,email,setemail,mName,setMName,time,setTime,seats,setSeats,tName,setTName}}>
     <div className="App">
       <ThemeProvider theme={theme}>
 <Paper sx={{minHeight:'100vh'}} elevation={20} >
@@ -46,7 +58,7 @@ function App() {
         <Switch>
            <Route exact path="/">
            {/* <CarouselList/> */}
-           <MovieList/>
+           <FreeMovieList/>
           </Route>
           <Route exact path="/login">
              <Login/>
@@ -113,13 +125,14 @@ function App() {
           <Route path="/seatselection">
           <Seat/>
           </Route> 
-           <Route path="">
+           <Route path="/payment">
+             <Payment/>
           </Route>  
         </Switch>
         </Paper>
         </ThemeProvider>
         </div>
-        </contextAPI.Provider>
+        </context.Provider>
   );
 }
 

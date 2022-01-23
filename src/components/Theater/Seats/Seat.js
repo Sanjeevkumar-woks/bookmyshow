@@ -1,28 +1,30 @@
-
- import './seatstyles.css'
- import React, { useState } from 'react'
+import './seatstyles.css'
+ import React, {useState } from 'react'
  import clsx from 'clsx'
 import { Button } from '@mui/material'
- 
+import {useContext } from "react";
+import {context}  from '../../../App'
+import { useHistory} from "react-router-dom";
+
  const movies = [
    {
      name: 'Avenger',
-     price: 10,
+     price: 350,
      occupied: [20, 21, 30, 1, 2, 8],
    },
    {
      name: 'Joker',
-     price: 12,
+     price: 120,
      occupied: [9, 41, 35, 11, 65, 26],
    },
    {
      name: 'Toy story',
-     price: 8,
+     price: 280,
      occupied: [37, 25, 44, 13, 2, 3],
    },
    {
      name: 'the lion king',
-     price: 9,
+     price: 150,
      occupied: [10, 12, 50, 33, 28, 47],
    },
  ]
@@ -32,7 +34,9 @@ import { Button } from '@mui/material'
  export  function Seat() {
    const [selectedMovie, setSelectedMovie] = useState(movies[0])
    const [selectedSeats, setSelectedSeats] = useState([])
- 
+   const {setSeats} = useContext(context);
+   setSeats(selectedSeats);
+const history=useHistory();
    return (
      <div className="App">
        <Movies
@@ -53,14 +57,15 @@ import { Button } from '@mui/material'
          You have selected <span className="count">{selectedSeats.length}</span>{' '}
          seats for the price of{' '}
          <span className="total">
-           {selectedSeats.length * selectedMovie.price}$
+           {selectedSeats.length * selectedMovie.price}₹
          </span>
        </p>
-       <Button variant="contained" disableElevation size="large">Check-Out</Button>
+       <Button variant="contained" disableElevation size="large" onClick={()=>history.push(`/payment`)}>Check-Out</Button>
      </div>
    )
  }
  
+
  function Movies({ movie, onChange }) {
    return (
      <div className="Movies">
@@ -74,7 +79,7 @@ import { Button } from '@mui/material'
        >
          {movies.map(movie => (
            <option key={movie.name} value={movie.name}>
-             {movie.name} (${movie.price})
+             {movie.name} (₹{movie.price})
            </option>
          ))}
        </select>
