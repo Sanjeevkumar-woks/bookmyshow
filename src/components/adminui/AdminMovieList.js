@@ -11,12 +11,12 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 
 export function AdminMovieList() {
   const get=()=>{
-    fetch("http://hacckathon-2-backend-sanjeev.herokuapp.com/movies")
+    fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/movies")
     .then((data)=>data.json())
     .then((mvi)=>setMovieList(mvi))
   }
   const del=(id)=>{
-    fetch(`http://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
+    fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,{ method:'DELETE',}).then((data)=>data.json()).then(()=>get());
   }
   const [movieList,setMovieList]=useState([]);
   const history=useHistory();

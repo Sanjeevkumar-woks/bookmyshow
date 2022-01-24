@@ -25,7 +25,7 @@ export function BookingsList() {
             <br/>
             <Button variant="outlined" color="error" onClick={()=>history.push("/admin/addbooking")}><AddIcon/>Add-Booking</Button>    
         { bookingList.map(({bookingid,username,movieName,time,Seats,theaterName},index)=>(
-                    <Bookings key={index} bookingid={bookingid} username={username} movieName={movieName} time={time} noOfSeats={Seats}theaterName={theaterName} />
+                    <Bookings key={index} bookingid={bookingid} username={username} movieName={movieName} time={time} Seats={Seats}theaterName={theaterName} />
                 ))
             }
         </div>
@@ -42,6 +42,7 @@ export function Bookings({bookingid,username,movieName,time,Seats,theaterName}) 
       <span >{username}</span>
       <span>{movieName}</span>
       <span>{Seats}</span>
+      <span>{time}</span>
       <span>{theaterName}</span></p>
         </div>
     )
