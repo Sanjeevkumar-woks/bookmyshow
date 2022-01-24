@@ -14,8 +14,7 @@ export  function AdminNav() {
           <Button color="error" onClick={()=>history.push("/admin/theaters")}>Theater</Button>
           <Button color="error" onClick={()=>history.push("/admin/users")}>Users</Button>
           <Button color="error" onClick={()=>history.push("/admin/booking")}>Bookings</Button>   
-          </Typography>
-          
+          </Typography>      
         </Toolbar>
       </AppBar>
     </Box>

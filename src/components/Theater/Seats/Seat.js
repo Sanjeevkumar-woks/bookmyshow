@@ -8,31 +8,32 @@ import { useHistory} from "react-router-dom";
 
  const movies = [
    {
-     name: 'Avenger',
+     name: 'Spider-Man: No Way Home',
      price: 350,
      occupied: [20, 21, 30, 1, 2, 8],
    },
    {
-     name: 'Joker',
+     name: 'Bangarraju',
      price: 120,
      occupied: [9, 41, 35, 11, 65, 26],
    },
    {
-     name: 'Toy story',
+     name: 'Badava Rascal',
      price: 280,
      occupied: [37, 25, 44, 13, 2, 3],
    },
    {
-     name: 'the lion king',
+     name: 'Rowdy Boys',
      price: 150,
      occupied: [10, 12, 50, 33, 28, 47],
    },
  ]
  
- const seats = Array.from({ length: 8 * 8 }, (_, i) => i)
+ const seats = Array.from({ length: 9*8 }, (_, i) => i)
  
  export  function Seat() {
-   const [selectedMovie, setSelectedMovie] = useState(movies[0])
+  const {mName} = useContext(context);
+   const [selectedMovie, setSelectedMovie] = useState(movies.find((mv)=>mv.name===mName))
    const [selectedSeats, setSelectedSeats] = useState([])
    const {setSeats} = useContext(context);
    setSeats(selectedSeats);
