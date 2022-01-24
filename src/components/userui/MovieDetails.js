@@ -12,7 +12,6 @@ import {context}  from '../../App'
 export function MovieDetails() {
     
     const {id}= useParams();
-    console.log(id);
   const [movie,setMovie]=useState([]);
   const getMovie=()=>{
     fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,

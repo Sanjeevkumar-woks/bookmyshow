@@ -9,7 +9,6 @@ import { v4 as uuid } from 'uuid';
 
 export  function Payment() {
 const {uname,mName,time,tName,seats} = useContext(context);
-console.log(uname,mName,time,tName,seats);
 const [show, setShow] = useState(false);
   const summaryStyle = { display: show ? "block" : "none" }
 

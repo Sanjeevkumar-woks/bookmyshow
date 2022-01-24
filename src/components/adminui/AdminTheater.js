@@ -7,7 +7,6 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 
 export function AdminTheater({deletButton,editbtn,id,name,movies,showtimes}) {
     const history=useHistory();
-    console.log(showtimes);
     return (
         <div className='theater'>  
             <div>      
