@@ -36,12 +36,13 @@ export function BookingsList() {
 
 
 export function Bookings({bookingid,username,movieName,time,Seats,theaterName}) {
+    const dseat=Seats.toString()
     return (
         <div className='user'> 
       <p><span>{bookingid}</span>
       <span >{username}</span>
       <span>{movieName}</span>
-      <span>{Seats}</span>
+      <span>{dseat}</span>
       <span>{time}</span>
       <span>{theaterName}</span></p>
         </div>

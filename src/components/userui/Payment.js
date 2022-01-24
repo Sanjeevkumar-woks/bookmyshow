@@ -42,14 +42,14 @@ const [show, setShow] = useState(false);
   setShow(!show)
       }
 
-
+const dseat=seats.toString()
   return (
 <div className='payment'>
     <h1>Booking Details</h1>
 <div className='movie-d'>
     <div className='movieb-name'>
         <h4>{mName}</h4>
-        <h5>Seats {seats}</h5>
+        <h5>Seats {dseat}</h5>
     </div>
     <div className='theater-d'>
         <h5>Time-{time}</h5>
