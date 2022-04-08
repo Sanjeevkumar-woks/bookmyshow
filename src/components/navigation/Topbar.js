@@ -8,17 +8,17 @@ import MovieFilterTwoToneIcon from '@mui/icons-material/MovieFilterTwoTone';
 export  function Topbar({ button }) {
   const history=useHistory(); 
   return (
-    <Navbar bg="dark" variant="dark"> 
+    <Navbar className='mainnav' bg="dark" variant="dark"> 
     <Container>
     <Navbar.Brand href="/">BookMyshow<MovieFilterTwoToneIcon/></Navbar.Brand>
-    <Nav className="me-auto">
+    <Nav className="me-auto left">
     <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="/movies">Movies</Nav.Link>
       <Nav.Link href="/theatersList">Theater</Nav.Link>
       <Nav.Link href="/contactus">Contact-Us</Nav.Link>
     </Nav>
     </Container>
-    <Stack direction="row" spacing={2}>
+    <Stack className='rigth' direction="row" spacing={2}>
     <Button variant="outlined" onClick={()=>history.push("/login")}>Login</Button>
     <Button color="success" variant="outlined" onClick={()=>history.push("/signup")}>Signup</Button>
     <Button color="secondary" variant="outlined" onClick={()=>history.push("/admin/home")}>AdminUser</Button>
