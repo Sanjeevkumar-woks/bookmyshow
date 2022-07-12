@@ -13,12 +13,12 @@ import { useHistory} from "react-router-dom";
      occupied: [20, 21, 30, 1, 2, 8],
    },
    {
-     name: 'Bangarraju',
+     name: 'Eternals',
      price: 120,
      occupied: [9, 41, 35, 11, 65, 26],
    },
    {
-     name: 'Badava Rascal',
+     name: 'Ms.Marvel',
      price: 280,
      occupied: [37, 25, 44, 13, 2, 3],
    },
