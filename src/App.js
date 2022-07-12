@@ -114,8 +114,8 @@ function App() {
             <AdminNav/>
             <AddBooking/>
           </Route>
-           <Route path="/theatersList">
-         <TheaterList/>
+           <Route exact path="/theatersList">
+            {uname? (<TheaterList/>):(<Login/>)}
            </Route>
           <Route path="/seatselection">
           <Seat/>

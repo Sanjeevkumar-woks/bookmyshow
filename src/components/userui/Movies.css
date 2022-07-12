@@ -1,10 +1,10 @@
 
-.movie-container{
-    margin-top: 10px;
+.movies-container{
+    margin-top: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
     gap: 3rem;
-    padding: 0px 100px;
+    padding: 10px 100px;
   
   }
   .movie-poster{
@@ -13,12 +13,11 @@
     object-fit: cover;
     cursor: pointer;
   }
-  .movie{
+  .movies{
    background-color:white;
    border-radius: 30px;
    margin-top: 10px;
-   width: 200px;
-   height: 500px;
+  padding-top: 2px;
    align-items: center;
   }
 
@@ -28,16 +27,16 @@
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
   }
   
-  .movie-name{
-      margin-bottom: 20px;
+  .movies-name{
+      margin-bottom: 5px;
       color: goldenrod;
   }
-  .movie-specs{
+  .movies-specs{
       background-color: rgb(105, 20, 20);
       display: flex;
       justify-content: space-between;
       padding: 0px 10px;
-      height: 40px;
+      height: 30px;
       width: 100%;    
   margin-bottom: 20px; 
 }

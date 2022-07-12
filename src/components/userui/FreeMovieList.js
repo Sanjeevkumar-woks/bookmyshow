@@ -22,7 +22,7 @@ export  function  FreeMovieList() {
         <>
         <br/>
         <h1>Recommanded Movie</h1>
-        <div className='movie-container'>
+        <div className='movies-container'>
             {movieList.map(({id,name,poster,rating,votes,genres}) => 
       <FreeMovie 
       watchbtn={<Button  variant="danger" className='delete' color='secondary'
@@ -35,11 +35,13 @@ export  function  FreeMovieList() {
 
 
  function FreeMovie({ watchbtn,id,name,poster,rating,votes,genres }) {
+    const history=useHistory();
+
     return (
-    <Card className='movie'>
+    <Card className='movies' onClick={()=>history.push(`/movie/${id}`)}>
       <img src={poster} alt="" className='movie-poster' />
-      <h4 className='movie-name'>{name}</h4>
-      <div className='movie-specs'>
+      <h4 className='movies-name'>{name}</h4>
+      <div className='movies-specs'>
           <p><FavoriteBorderOutlinedIcon/>{rating}</p>
           <p>{votes}K Votes</p>
       </div>
