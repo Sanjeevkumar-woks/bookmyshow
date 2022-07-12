@@ -26,7 +26,7 @@ export  function  FreeMovieList() {
             {movieList.map(({id,name,poster,rating,votes,genres}) => 
       <FreeMovie 
       watchbtn={<Button  variant="danger" className='delete' color='secondary'
-      onClick={()=>history.push(`/login`) }>Watch-Movie</Button> }
+      onClick={()=>history.push(`/movie/${id}`) }>Watch-Movie</Button> }
       id={id} name={name} poster={poster} rating={rating} votes={votes} genres={genres} />)}
         </div>
         </>
