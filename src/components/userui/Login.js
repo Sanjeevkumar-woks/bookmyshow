@@ -59,6 +59,7 @@ export default function Login() {
           Login
         </Button>
        <Button variant="link" onClick={()=>history.push("/signup")}>Signup</Button>
+    <Button color="secondary" variant="link" onClick={()=>history.push("/admin/home")}>Admin</Button>
       </Form>
     </div>
   );

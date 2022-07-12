@@ -20,8 +20,6 @@ export  function Topbar({ button }) {
     </Container>
     <Stack className='rigth' direction="row" spacing={2}>
     <Button variant="outlined" onClick={()=>history.push("/login")}>Login</Button>
-    <Button color="success" variant="outlined" onClick={()=>history.push("/signup")}>Signup</Button>
-    <Button color="secondary" variant="outlined" onClick={()=>history.push("/admin/home")}>AdminUser</Button>
     </Stack>
     {button}
   </Navbar>
