@@ -12,17 +12,18 @@ import {context}  from '../../App'
 export function MovieDetails() {
     
     const {id}= useParams();
-  const [movie,setMovie]=useState([]);
+  const {setMName,setMovied,movied} = useContext(context);
+
+
   const getMovie=()=>{
     fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,
-    {method:"GET"}).then((data)=>data.json()).then((mv)=>setMovie(mv));
+    {method:"GET"}).then((data)=>data.json()).then((mv)=>setMovied(mv));
   };
  
  useEffect(getMovie);
     const history=useHistory();
-    const[{name,poster,rating,votes,genres,language,duration, releaseDate}]=[movie]
+    const[{name,poster,rating,votes,genres,language,duration, releaseDate}]=[movied]
     //seting movie name to the boooking variable
-    const {setMName} = useContext(context);
     setMName(name);
     return (
         <div className='movie-details'>

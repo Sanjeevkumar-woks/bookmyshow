@@ -38,7 +38,8 @@ function App() {
   const [time,setTime]=useState("");
   const [seats,setSeats]=useState("");
   const[tName,setTName]=useState("");
-
+  const[movied,setMovied]=useState({});
+  const [amount,setAmount]=useState(0);
 
    const theme = createTheme({
     palette: {
@@ -49,7 +50,7 @@ function App() {
 
   return (
     // creating Contaxt For seating up Booking Details
-    <context.Provider value={{uname,setUname,email,setemail,mName,setMName,time,setTime,seats,setSeats,tName,setTName}}>
+    <context.Provider value={{uname,setUname,email,setemail,mName,setMName,time,setTime,seats,setSeats,tName,setTName,movied,setMovied,amount,setAmount}}>
     <div className="App">
       <ThemeProvider theme={theme}>
 <Paper sx={{minHeight:'100vh'}} elevation={20} >
@@ -69,7 +70,7 @@ function App() {
             <ContactUs/>
           </Route>
           <Route exact path="/movies">
-            <MovieList/>
+          <FreeMovieList/>
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>

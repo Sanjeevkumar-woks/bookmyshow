@@ -35,7 +35,7 @@ import { useHistory} from "react-router-dom";
   const {mName} = useContext(context);
    const [selectedMovie, setSelectedMovie] = useState(movies.find((mv)=>mv.name===mName))
    const [selectedSeats, setSelectedSeats] = useState([])
-   const {setSeats} = useContext(context);
+   const {setSeats,setAmount,amount} = useContext(context);
    setSeats(selectedSeats);
 const history=useHistory();
    return (
@@ -58,7 +58,8 @@ const history=useHistory();
          You have selected <span className="count">{selectedSeats.length}</span>{' '}
          seats for the price of{' '}
          <span className="total">
-           {selectedSeats.length * selectedMovie.price}₹
+           {setAmount(selectedSeats.length * selectedMovie.price)}
+           {amount}₹
          </span>
        </p>
        <Button variant="contained" disableElevation size="large" onClick={()=>history.push(`/payment`)}>Check-Out</Button>
