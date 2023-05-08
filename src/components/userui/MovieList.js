@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
   
 export  function  MovieList() {
     const get=()=>{
-        fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/movies")
+        fetch("https://movies-backend-jet.vercel.app/movies")
         .then((data)=>data.json())
         .then((mvi)=>setMovieList(mvi))
       }
