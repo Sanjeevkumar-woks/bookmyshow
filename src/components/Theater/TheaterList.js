@@ -9,7 +9,7 @@ export function TheaterList() {
     const [theaterList,setTheaterList]=useState([]);
       
     const get=()=>{
-       fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/theaters")
+       fetch("https://movies-backend-jet.vercel.app/theaters")
        .then((data)=>data.json())
        .then((th)=>setTheaterList(th))
     }   
