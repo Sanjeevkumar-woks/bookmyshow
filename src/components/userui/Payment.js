@@ -14,7 +14,7 @@ export  function Payment() {
 	
 	const initPayment = (data) => {
 		const options = {
-			key: "rzp_test_GdM9bftAUebbNz",
+			key: "rzp_test_2qQDQEddTeFIh2",
 			amount: data.amount,
 			currency: data.currency,
 			name: movied.name,
