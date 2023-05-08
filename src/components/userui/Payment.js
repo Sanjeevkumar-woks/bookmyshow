@@ -23,7 +23,7 @@ export  function Payment() {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = "https://razorpaybackend.herokuapp.com/api/payment/verify";
+					const verifyUrl = "https://movies-backend-jet.vercel.app/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
 					console.log(data);
           addbooking();
@@ -41,7 +41,7 @@ export  function Payment() {
 
 	const handlePayment = async () => {
 		try {
-			const orderUrl = "https://razorpaybackend.herokuapp.com/api/payment/orders";
+			const orderUrl = "https://movies-backend-jet.vercel.app/api/payment/orders";
 			const { data } = await axios.post(orderUrl, { amount: amount });
 			console.log(data);
 			initPayment(data.data);
