@@ -16,7 +16,7 @@ export function MovieDetails() {
 
 
   const getMovie=()=>{
-    fetch(`https://hacckathon-2-backend-sanjeev.herokuapp.com/movies/${id}`,
+    fetch(`https://movies-backend-jet.vercel.app/movies/${id}`,
     {method:"GET"}).then((data)=>data.json()).then((mv)=>setMovied(mv));
   };
  
