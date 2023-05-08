@@ -18,7 +18,7 @@ export default function Signup() {
         email,
         password
     }
-    fetch("https://hacckathon-2-backend-sanjeev.herokuapp.com/users/signup",{
+    fetch("https://movies-backend-jet.vercel.app/users/signup",{
       method:"POST",
       body: JSON.stringify(newUser),
       headers:{"Content-Type": "application/json"},
