@@ -10,7 +10,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 // Movies which everyone can see even Without Login
 export  function  FreeMovieList() {
     const get=()=>{
-        fetch("https://movies-backend-jet.vercel.app//movies")
+        fetch("https://movies-backend-jet.vercel.app/movies")
         .then((data)=>data.json())
         .then((mvi)=>setMovieList(mvi))
       }
